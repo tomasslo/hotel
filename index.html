@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pozadi {
+            background-image: url(img/h1.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
+        
+    <title>Document</title>
+</head>
+<body>
+    
+<header>
+    <div class="pozadi mt-5 mb-5">
+        <div class="container mt-5">
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="jmeno" class="form-label">Jméno a příjmení</label>
+                        <input type="text" class="form-control" id="jmeno" placeholder="Jméno Přijmení">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="tel" class="form-label">Telefon</label>
+                        <input type="text" class="form-control" id="tel" placeholder="telefon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@example.com">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row text-center">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="datum_od">Datum od</label>
+                    <input type="date" id="datum_od">
+                </div>        
+                </div>
+
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="datum_do">Datum do</label>
+                            <input type="date" id="datum_do">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                    <div class="row text-center">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="vyber_pokoje" class="form-label">Výběr pokoje</label>
+                                      <select name="vyber_pokoje" id="vyber_pokoje">
+                                        <option value="jednoluzkovy">Jednolůžkový</option>
+                                        <option value="dvojluzkovy">Dvojlůžkový</option>
+                                        <option value="triluzkovy">Třílůžkový</option>
+                                        <option value="ctyrluzkovy">Čtyřlůžkový</option>
+                                        <option value="petiluzkovy">Pětilůžkový</option>
+                                        <option value="Kralovske">královské pokoje</option>
+                                      </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row text-center">
+                        <div class="col">
+                            <button type="button" class="btn btn-danger mb-5">Rezervuj</button>
+
+                            <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Virtuální prohlídka</button>
+
+<!-- Modální okno -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nejlepší hotel</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <iframe width="100%" src="https://www.youtube.com/embed/ixyem-4JQYo?autoplay=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" id="video"  allowscriptaccess="always" allowfullscreen></iframe>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- skript pro modální okno, aby se pojeho zavření už video nepřehrávalo a nebyl slyšet zvuk-->
+
+    <script>
+  
+  var exampleModal = document.getElementById('exampleModal');
+  var iframe = exampleModal.querySelector('iframe');
+  var videoSrc = iframe.src;
+
+  exampleModal.addEventListener('hide.bs.modal', function () {
+    iframe.src = "";
+  });
+
+  exampleModal.addEventListener('show.bs.modal', function () {
+    iframe.src = videoSrc;
+  });
+    </script>
+
+                        </div>
+                    </div>
+
+
+
+           
+        </div>
+    </div>
+
+       
+
+
+
+<nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Hotel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a href="#" class="nav-link" aria-current="page">Home</a>
+                <a href="#historie" class="nav-link">Historie</a>
+                <a href="#cenik" class="nav-link">Ceník</a>
+                <a href="#galerie" class="nav-link">Galerie</a>
+                <a href="#kontakty" class="nav-link">Kontakty</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</header>
+
+
+
+<main>
+
+
+   <section id="historie">
+      
+    <div class="container"> <h2>Historie</h2>
+
+        <div class="row">
+
+            <div class="col col-lg-4 col-md-6 mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, deserunt. Libero delectus hic modi vero dignissimos tenetur, beatae repudiandae et quibusdam, eius veniam fugiat. Harum odio minus, recusandae modi ea temporibus tempore voluptatibus excepturi error, reprehenderit iste cumque voluptates a repellat veritatis architecto nostrum voluptas earum inventore cupiditate. Aliquid, ratione!            
+        </div>
+        <div class="col col-lg-4 col-md-6 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, aut dolorum delectus fugiat nobis voluptatibus recusandae, accusantium assumenda obcaecati nulla vel aliquam deleniti soluta. Id, enim harum sed minima aspernatur eum debitis rem voluptatum cum! Ad minima non odit. Distinctio ex cumque vel similique quaerat perspiciatis eum soluta quo beatae?            
+        </div>
+        <div class="col col-lg-4 col-md-12 d-sm-none d-md-block d-none d-sm-block text-center">
+            <img src="img/historie.png" alt="historie">
+        </div>
+        </div>
+        
+    </div>
+
+
+
+   </section>
+
+
+   <section class="mt-5" id="cenik">
+    
+
+    <div class="container"><h2>Ceník</h2>
+        <div class="row">
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                <img src="img/pok1.png" class="card-img-top" alt="pokoj 1">
+                <div class="card-body">
+                  <h5 class="card-title">Pokoj typ 1</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>osoby</th><th>Cena za noc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td><td>900 Kč</td>
+                        </tr>
+                        <tr>
+                            <td>2</td><td>800 Kč</td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>700 Kč</td>
+                        </tr>
+                    </tbody>
+                </table></p>
+
+
+
+                  <p class="text-center"><button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" data-bs-placement="top" data-bs-toggle="tooltip" title="Skvělý pokoj č. 1">Vybrat</button></p>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <img src="img/pok2.png" class="card-img-top" alt="pokoj 2">
+                    <div class="card-body">
+                      <h5 class="card-title">Pokoj typ 2</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>osoby</th><th>Cena za noc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td><td>900 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>800 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>3</td><td>700 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table></p>
+                      <p class="text-center"><button type="button" class="btn btn-success btn-sm" data-toggle="tooltip" data-bs-placement="top" data-bs-toggle="tooltip" title="Skvělý pokoj č. 2">Vybrat</button></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <img src="img/pok3.png" class="card-img-top" alt="pokoj 3">
+                    <div class="card-body">
+                      <h5 class="card-title">Pokoj typ 3</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>osoby</th><th>Cena za noc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td><td>900 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>800 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>3</td><td>700 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table></p>
+                      <p class="text-center"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="popover" title="Pokoj typu 3" data-bs-content="Naprosto skvělá volba!">Vybrat</button></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col col-lg-3 col-md-6 col-sm-12">
+                <div class="card mb-3">
+                    <img src="img/pok4.png" class="card-img-top" alt="pokoj 4">
+                    <div class="card-body">
+                      <h5 class="card-title">Pokoj typ 4</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>osoby</th><th>Cena za noc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td><td>900 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>800 Kč</td>
+                            </tr>
+                            <tr>
+                                <td>3</td><td>700 Kč</td>
+                            </tr>
+                        </tbody>
+                    </table></p>
+                      <p class="text-center"><button type="button" class="btn btn-success btn-sm" data-bs-toggle="popover" title="Pokoj typu 4" data-bs-content="Úžasná volba!">Vybrat</button></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+   </section>
+
+
+   <section class="mt-5" id="galerie">
+    
+    <div class="container"><h2>Galerie</h2>
+        <div class="row">
+            <div class="col p-5">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/pok1.png" class="d-block w-100" alt="a">
+                        <div class="carousel-caption d-none d-md-block bg-black bg-opacity-25">
+                        <h5>První</h5>
+                        <p>Pokoj typ 1 - vhodný pro jednotlivce.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/pok2.png" class="d-block w-100" alt="b">
+                        <div class="carousel-caption d-none d-md-block bg-black bg-opacity-25">
+                            <h5>Druhý</h5>
+                            <p>Pokoj typ 2 - vhodný pro dvě osoby.</p>
+                            </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/pok3.png" class="d-block w-100" alt="c">
+                        <div class="carousel-caption d-none d-md-block bg-black bg-opacity-25">
+                            <h5>Třetí</h5>
+                            <p>Pokoj typ 3 - vhodný pro rodiny s dětmi.</p>
+                            </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/pok4.png" class="d-block w-100" alt="d">
+                        <div class="carousel-caption d-none d-md-block bg-black bg-opacity-25">
+                            <h5>Čtvrtý</h5>
+                            <p>Pokoj typ 4 - vhodný pro všechny. :-)</p>
+                            </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+   </section>
+
+
+   <section class="mt-5" id="kontakty">
+    
+
+<div class="container"><h2>Kontakty</h2>
+        <div class="row">
+            <div class="col-4 p-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2164.0363404480413!2d18.169066400366425!3d49.83329854575043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1689593299821!5m2!1scs!2scz" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class=" text-center col-4 p-5">
+                <p><i class="fa-brands fa-facebook fa-xl"></i> facebook</p>
+                <p><i class="fa-brands fa-twitter fa-xl"></i> twitter</p>
+                <p><i class="fa-brands fa-instagram fa-xl"></i> instagram</p>
+            </div>
+            <div class="col-4 p-5">
+                <p><i class="fa-solid fa-location-dot fa-xl"></i> adresa: Ztracená 7, 987 65 Zelený Háj</p>
+                <p><i class="fa-solid fa-phone fa-xl"></i> tel.: 123 456 789</p>
+                <p><i class="fa-solid fa-box fa-xl"></i> e-mail: example@example.com</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+   </section>
+
+
+</main>
+
+
+
+
+
+
+<footer class="text-center">
+    Vytvořeno 2023
+</footer>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+        </script>
+
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+    </script>
+
+</body>
+</html>
